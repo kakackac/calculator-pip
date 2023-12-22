@@ -9,33 +9,20 @@ class Main(QDialog):
     def init_ui(self):
         main_layout = QGridLayout()
 
-        self.equation_solution_line = QLineEdit("")
-        main_layout.addWidget(self.equation_solution_line, 0, 0, 1, 4)
-
-
-        
-        self.equation_solution_line = QLineEdit("")
-        main_layout.addWidget(self.equation_solution_line)
-
-        
-        button_plus = QPushButton("+")
-        button_minus = QPushButton("-")
-        button_product = QPushButton("x")
-
         button_division = QPushButton("/")
         button_product = QPushButton("x")
         button_minus = QPushButton("-")
         button_plus = QPushButton("+")
 
 
+
         button_equal = QPushButton("=")
-        button_clear = QPushButton("Clear")
-        button_backspace = QPushButton("Backspace")
+        button_clear = QPushButton("C")
+        button_backspace = QPushButton("\u2190")  # 왼쪽 화살표 유니코드
 
         button_equal.clicked.connect(self.button_equal_clicked)
         button_clear.clicked.connect(self.button_clear_clicked)
         button_backspace.clicked.connect(self.button_backspace_clicked)
-
 
 
         self.setLayout(main_layout)
@@ -57,12 +44,7 @@ class Main(QDialog):
 
     def button_equal_clicked(self):
         equation = self.equation_solution_line.text()
-        solution = eval(equation)
-        self.equation_solution_line.setText(str(solution))  # 숫자를 문자열로 변환하여 설정
 
-
-    def button_clear_clicked(self):
-        self.equation_solution_line.setText("")
 
     def button_backspace_clicked(self):
         equation = self.equation_solution_line.text()
