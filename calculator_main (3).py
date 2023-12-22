@@ -19,7 +19,6 @@ class Main(QDialog):
         button_product = QPushButton("x")
         button_division = QPushButton("/")
 
-      
         button_plus.clicked.connect(lambda state, operation="+": self.button_operation_clicked(operation))
         button_minus.clicked.connect(lambda state, operation="-": self.button_operation_clicked(operation))
         button_product.clicked.connect(lambda state, operation="*": self.button_operation_clicked(operation))
