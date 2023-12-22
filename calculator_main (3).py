@@ -9,20 +9,12 @@ class Main(QDialog):
     def init_ui(self):
         main_layout = QGridLayout()
 
+
         button_division = QPushButton("/")
         button_product = QPushButton("x")
         button_minus = QPushButton("-")
         button_plus = QPushButton("+")
 
-
-
-        button_equal = QPushButton("=")
-        button_clear = QPushButton("C")
-        button_backspace = QPushButton("\u2190")  # 왼쪽 화살표 유니코드
-
-        button_equal.clicked.connect(self.button_equal_clicked)
-        button_clear.clicked.connect(self.button_clear_clicked)
-        button_backspace.clicked.connect(self.button_backspace_clicked)
 
 
         self.setLayout(main_layout)
